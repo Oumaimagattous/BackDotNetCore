@@ -1,0 +1,857 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Asus\\AppData\\Local\\Temp\\.vsdbgsrc\\fcc241596544d9abe323c8f1f9714daf1d03cb411bada090332bf96a996c40d5\\BonEntreeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\models\\bonentreedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\models\\bonentreedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\models\\bonentree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\models\\bonentree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\controllers\\bonentreecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\controllers\\bonentreecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\models\\chambre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\models\\chambre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\controllers\\fournisseurcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\controllers\\fournisseurcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\controllers\\chambrecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\controllers\\chambrecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\controllers\\bonsortiecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\controllers\\bonsortiecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\models\\bonsortiedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\models\\bonsortiedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\models\\fournisseurdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\models\\fournisseurdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\models\\fournisseur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\models\\fournisseur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\models\\bonsortie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\models\\bonsortie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\data\\gestiondbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\data\\gestiondbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\models\\clientdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\models\\clientdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\models\\societe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\models\\societe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\controllers\\societecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\controllers\\societecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\models\\chambredto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\models\\chambredto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\models\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\models\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\models\\produit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\models\\produit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\models\\societedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\models\\societedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\controllers\\produitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\controllers\\produitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Users\\pc\\source\\repos\\GestionDepot\\GestionDepot\\Migrations\\20240603110410_initial_mig1111.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Users\\pc\\source\\repos\\GestionDepot\\GestionDepot\\Migrations\\20240603110224_initial_mig111.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Users\\pc\\source\\repos\\GestionDepot\\GestionDepot\\Migrations\\20240603110121_initial_mig111.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\gestiondepot.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\gestiondepot.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\migrations\\20240526164223_initial migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\migrations\\20240526164223_initial migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\migrations\\20240527061636_initial migration211221112.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\migrations\\20240527061636_initial migration211221112.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\migrations\\20240527061753_initial migration2112211121.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\migrations\\20240527061753_initial migration2112211121.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\migrations\\20240527044156_initial migration21122111.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\migrations\\20240527044156_initial migration21122111.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\migrations\\20240527041010_initial migration21122.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\migrations\\20240527041010_initial migration21122.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\migrations\\20240527043806_initial migration2112211.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\migrations\\20240527043806_initial migration2112211.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\migrations\\20240526202454_initial migration2112.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\migrations\\20240526202454_initial migration2112.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\migrations\\20240526175602_initial migration2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\migrations\\20240526175602_initial migration2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\migrations\\20240526180357_initial migration212.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\migrations\\20240526180357_initial migration212.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\migrations\\20240526180158_initial migration21.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\migrations\\20240526180158_initial migration21.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\migrations\\20240526174042_initial migration1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\migrations\\20240526174042_initial migration1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\migrations\\20240529044016_initial migration00002.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\migrations\\20240529044016_initial migration00002.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\migrations\\20240529044939_initial migration000022.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\migrations\\20240529044939_initial migration000022.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\migrations\\20240529045038_initial migration0000222.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\migrations\\20240529045038_initial migration0000222.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\migrations\\20240528144802_initial migration0000.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\migrations\\20240528144802_initial migration0000.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\migrations\\20240603124639_initial_mig11112.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\migrations\\20240603124639_initial_mig11112.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\migrations\\20240603110503_initial_mig1111.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\migrations\\20240603110503_initial_mig1111.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|c:\\users\\asus\\desktop\\gestiondepot1\\gestiondepot\\migrations\\20240609143206_nomdelamigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEF67144-118C-42C8-84B7-A5A99C82B463}|GestionDepot\\GestionDepot.csproj|solutionrelative:gestiondepot\\migrations\\20240609143206_nomdelamigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BonEntreeController.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Controllers\\BonEntreeController.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Controllers\\BonEntreeController.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Controllers\\BonEntreeController.cs",
+              "RelativeToolTip": "GestionDepot\\Controllers\\BonEntreeController.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAwwNUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T12:25:22.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BonEntreeDto.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\BonEntreeDto.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Models\\BonEntreeDto.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\BonEntreeDto.cs",
+              "RelativeToolTip": "GestionDepot\\Models\\BonEntreeDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAgwBAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T12:22:10.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Chambre.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\Chambre.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Models\\Chambre.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\Chambre.cs",
+              "RelativeToolTip": "GestionDepot\\Models\\Chambre.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T03:56:43.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BonEntree.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\BonEntree.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Models\\BonEntree.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\BonEntree.cs",
+              "RelativeToolTip": "GestionDepot\\Models\\BonEntree.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAkwCcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T03:56:05.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BonEntreeController.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\AppData\\Local\\Temp\\.vsdbgsrc\\fcc241596544d9abe323c8f1f9714daf1d03cb411bada090332bf96a996c40d5\\BonEntreeController.cs",
+              "RelativeDocumentMoniker": "..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\fcc241596544d9abe323c8f1f9714daf1d03cb411bada090332bf96a996c40d5\\BonEntreeController.cs",
+              "ToolTip": "C:\\Users\\Asus\\AppData\\Local\\Temp\\.vsdbgsrc\\fcc241596544d9abe323c8f1f9714daf1d03cb411bada090332bf96a996c40d5\\BonEntreeController.cs [Lecture seule]",
+              "RelativeToolTip": "..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\fcc241596544d9abe323c8f1f9714daf1d03cb411bada090332bf96a996c40d5\\BonEntreeController.cs [Lecture seule]",
+              "ViewState": "AQIAACsAAAAAAAAAAAAIwDQAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T08:52:22.738Z",
+              "EditorCaption": " [Lecture seule]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "GestionDepot\\Controllers\\LoginController.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAIAwwD4AAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T10:37:35.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FournisseurController.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Controllers\\FournisseurController.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Controllers\\FournisseurController.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Controllers\\FournisseurController.cs",
+              "RelativeToolTip": "GestionDepot\\Controllers\\FournisseurController.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAkwEoAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:30:17.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ChambreController.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Controllers\\ChambreController.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Controllers\\ChambreController.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Controllers\\ChambreController.cs",
+              "RelativeToolTip": "GestionDepot\\Controllers\\ChambreController.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAuwEcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T04:02:45.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BonSortieController.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Controllers\\BonSortieController.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Controllers\\BonSortieController.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Controllers\\BonSortieController.cs",
+              "RelativeToolTip": "GestionDepot\\Controllers\\BonSortieController.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAA2wFMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T12:48:58.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BonSortieDto.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\BonSortieDto.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Models\\BonSortieDto.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\BonSortieDto.cs",
+              "RelativeToolTip": "GestionDepot\\Models\\BonSortieDto.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwAoAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T12:45:10.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FournisseurDto.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\FournisseurDto.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Models\\FournisseurDto.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\FournisseurDto.cs",
+              "RelativeToolTip": "GestionDepot\\Models\\FournisseurDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T08:42:21.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BonSortie.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\BonSortie.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Models\\BonSortie.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\BonSortie.cs",
+              "RelativeToolTip": "GestionDepot\\Models\\BonSortie.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T14:15:50.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Fournisseur.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\Fournisseur.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Models\\Fournisseur.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\Fournisseur.cs",
+              "RelativeToolTip": "GestionDepot\\Models\\Fournisseur.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T16:25:24.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "GestionDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Data\\GestionDBContext.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Data\\GestionDBContext.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Data\\GestionDBContext.cs",
+              "RelativeToolTip": "GestionDepot\\Data\\GestionDBContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T12:29:24.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ClientController.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Controllers\\ClientController.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Controllers\\ClientController.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Controllers\\ClientController.cs",
+              "RelativeToolTip": "GestionDepot\\Controllers\\ClientController.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAIwDAAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:29:21.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ClientDto.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\ClientDto.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Models\\ClientDto.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\ClientDto.cs",
+              "RelativeToolTip": "GestionDepot\\Models\\ClientDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T11:19:48.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "20240609143206_NomDeLaMigration.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240609143206_NomDeLaMigration.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Migrations\\20240609143206_NomDeLaMigration.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240609143206_NomDeLaMigration.cs",
+              "RelativeToolTip": "GestionDepot\\Migrations\\20240609143206_NomDeLaMigration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T14:32:06.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Program.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Program.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Program.cs",
+              "RelativeToolTip": "GestionDepot\\Program.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAIBJwBUAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T19:14:45.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "20240603124639_initial_mig11112.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240603124639_initial_mig11112.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Migrations\\20240603124639_initial_mig11112.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240603124639_initial_mig11112.cs",
+              "RelativeToolTip": "GestionDepot\\Migrations\\20240603124639_initial_mig11112.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T12:46:39.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\appsettings.json",
+              "RelativeDocumentMoniker": "GestionDepot\\appsettings.json",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\appsettings.json",
+              "RelativeToolTip": "GestionDepot\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-26T16:38:24.487Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Client.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\Client.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Models\\Client.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\Client.cs",
+              "RelativeToolTip": "GestionDepot\\Models\\Client.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBQAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T16:25:06.082Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "SocieteController.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Controllers\\SocieteController.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Controllers\\SocieteController.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Controllers\\SocieteController.cs",
+              "RelativeToolTip": "GestionDepot\\Controllers\\SocieteController.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAIBJwBYAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:43:03.391Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Societe.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\Societe.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Models\\Societe.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\Societe.cs",
+              "RelativeToolTip": "GestionDepot\\Models\\Societe.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAADwvxEAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:35:59.891Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ChambreDto.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\ChambreDto.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Models\\ChambreDto.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\ChambreDto.cs",
+              "RelativeToolTip": "GestionDepot\\Models\\ChambreDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T03:58:50.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\Login.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Models\\Login.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\Login.cs",
+              "RelativeToolTip": "GestionDepot\\Models\\Login.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBJwA0AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T10:23:45.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\LoginDto.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Models\\LoginDto.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\LoginDto.cs",
+              "RelativeToolTip": "GestionDepot\\Models\\LoginDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T10:44:01.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Produit.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\Produit.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Models\\Produit.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\Produit.cs",
+              "RelativeToolTip": "GestionDepot\\Models\\Produit.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T03:57:06.006Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "SocieteDto.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\SocieteDto.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Models\\SocieteDto.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Models\\SocieteDto.cs",
+              "RelativeToolTip": "GestionDepot\\Models\\SocieteDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:41:50.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ProduitController.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Controllers\\ProduitController.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Controllers\\ProduitController.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Controllers\\ProduitController.cs",
+              "RelativeToolTip": "GestionDepot\\Controllers\\ProduitController.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAkwDwAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T04:02:19.847Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "20240603110224_initial_mig111.cs",
+              "DocumentMoniker": "F:\\Users\\pc\\source\\repos\\GestionDepot\\GestionDepot\\Migrations\\20240603110224_initial_mig111.cs",
+              "ToolTip": "F:\\Users\\pc\\source\\repos\\GestionDepot\\GestionDepot\\Migrations\\20240603110224_initial_mig111.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T11:02:24.571Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "20240603110410_initial_mig1111.cs",
+              "DocumentMoniker": "F:\\Users\\pc\\source\\repos\\GestionDepot\\GestionDepot\\Migrations\\20240603110410_initial_mig1111.cs",
+              "ToolTip": "F:\\Users\\pc\\source\\repos\\GestionDepot\\GestionDepot\\Migrations\\20240603110410_initial_mig1111.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T11:04:10.723Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "20240603110503_initial_mig1111.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240603110503_initial_mig1111.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Migrations\\20240603110503_initial_mig1111.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240603110503_initial_mig1111.cs",
+              "RelativeToolTip": "GestionDepot\\Migrations\\20240603110503_initial_mig1111.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T11:05:03.654Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "20240603110121_initial_mig111.cs",
+              "DocumentMoniker": "F:\\Users\\pc\\source\\repos\\GestionDepot\\GestionDepot\\Migrations\\20240603110121_initial_mig111.cs",
+              "ToolTip": "F:\\Users\\pc\\source\\repos\\GestionDepot\\GestionDepot\\Migrations\\20240603110121_initial_mig111.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T11:01:22.462Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "GestionDepot\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T07:26:47.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "20240529044016_initial migration00002.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240529044016_initial migration00002.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Migrations\\20240529044016_initial migration00002.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240529044016_initial migration00002.cs",
+              "RelativeToolTip": "GestionDepot\\Migrations\\20240529044016_initial migration00002.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T04:40:16.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "GestionDepot\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Properties\\launchSettings.json",
+              "RelativeToolTip": "GestionDepot\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAwAAAAAAAAAAIBJwAMAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-26T17:21:58.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "GestionDepot.http",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\GestionDepot.http",
+              "RelativeDocumentMoniker": "GestionDepot\\GestionDepot.http",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\GestionDepot.http",
+              "RelativeToolTip": "GestionDepot\\GestionDepot.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-05-26T17:24:58.928Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "20240529044939_initial migration000022.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240529044939_initial migration000022.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Migrations\\20240529044939_initial migration000022.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240529044939_initial migration000022.cs",
+              "RelativeToolTip": "GestionDepot\\Migrations\\20240529044939_initial migration000022.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T04:49:39.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "20240529045038_initial migration0000222.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240529045038_initial migration0000222.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Migrations\\20240529045038_initial migration0000222.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240529045038_initial migration0000222.cs",
+              "RelativeToolTip": "GestionDepot\\Migrations\\20240529045038_initial migration0000222.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T04:50:39.122Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "20240528144802_initial migration0000.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240528144802_initial migration0000.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Migrations\\20240528144802_initial migration0000.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240528144802_initial migration0000.cs",
+              "RelativeToolTip": "GestionDepot\\Migrations\\20240528144802_initial migration0000.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T14:48:02.861Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "20240527061636_initial migration211221112.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240527061636_initial migration211221112.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Migrations\\20240527061636_initial migration211221112.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240527061636_initial migration211221112.cs",
+              "RelativeToolTip": "GestionDepot\\Migrations\\20240527061636_initial migration211221112.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T06:16:36.399Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "20240527061753_initial migration2112211121.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240527061753_initial migration2112211121.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Migrations\\20240527061753_initial migration2112211121.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240527061753_initial migration2112211121.cs",
+              "RelativeToolTip": "GestionDepot\\Migrations\\20240527061753_initial migration2112211121.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T06:17:53.418Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "20240527044156_initial migration21122111.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240527044156_initial migration21122111.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Migrations\\20240527044156_initial migration21122111.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240527044156_initial migration21122111.cs",
+              "RelativeToolTip": "GestionDepot\\Migrations\\20240527044156_initial migration21122111.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T04:41:57.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "20240527041010_initial migration21122.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240527041010_initial migration21122.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Migrations\\20240527041010_initial migration21122.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240527041010_initial migration21122.cs",
+              "RelativeToolTip": "GestionDepot\\Migrations\\20240527041010_initial migration21122.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T04:10:10.441Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "20240527043806_initial migration2112211.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240527043806_initial migration2112211.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Migrations\\20240527043806_initial migration2112211.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240527043806_initial migration2112211.cs",
+              "RelativeToolTip": "GestionDepot\\Migrations\\20240527043806_initial migration2112211.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T04:38:06.921Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "20240526202454_initial migration2112.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240526202454_initial migration2112.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Migrations\\20240526202454_initial migration2112.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240526202454_initial migration2112.cs",
+              "RelativeToolTip": "GestionDepot\\Migrations\\20240526202454_initial migration2112.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T20:24:55.135Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "20240526175602_initial migration2.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240526175602_initial migration2.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Migrations\\20240526175602_initial migration2.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240526175602_initial migration2.cs",
+              "RelativeToolTip": "GestionDepot\\Migrations\\20240526175602_initial migration2.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:56:03.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "20240526180357_initial migration212.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240526180357_initial migration212.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Migrations\\20240526180357_initial migration212.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240526180357_initial migration212.cs",
+              "RelativeToolTip": "GestionDepot\\Migrations\\20240526180357_initial migration212.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T18:03:58.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "20240526180158_initial migration21.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240526180158_initial migration21.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Migrations\\20240526180158_initial migration21.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240526180158_initial migration21.cs",
+              "RelativeToolTip": "GestionDepot\\Migrations\\20240526180158_initial migration21.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T18:01:58.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "20240526174042_initial migration1.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240526174042_initial migration1.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Migrations\\20240526174042_initial migration1.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240526174042_initial migration1.cs",
+              "RelativeToolTip": "GestionDepot\\Migrations\\20240526174042_initial migration1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:40:42.524Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\WeatherForecast.cs",
+              "RelativeToolTip": "GestionDepot\\WeatherForecast.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:39:47.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "20240526164223_initial migration.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240526164223_initial migration.cs",
+              "RelativeDocumentMoniker": "GestionDepot\\Migrations\\20240526164223_initial migration.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\GestionDepot1\\GestionDepot\\Migrations\\20240526164223_initial migration.cs",
+              "RelativeToolTip": "GestionDepot\\Migrations\\20240526164223_initial migration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T16:42:24.503Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
