@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Cors;
 using GestionDepot.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,7 +13,6 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<GestionDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("GestionDbContext")));
 
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -21,15 +21,26 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-app.MapFallbackToFile("index.html");
 app.UseHttpsRedirection();
-app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+
+// Configure CORS
+app.UseCors(options => options
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .WithOrigins("http://localhost:4200")  // Remplacez ceci par l'URL de votre frontend
+);
+
+
+app.UseRouting();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapFallbackToFile("index.html");
 
 app.Run();

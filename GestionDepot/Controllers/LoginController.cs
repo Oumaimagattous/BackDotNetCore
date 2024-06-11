@@ -76,6 +76,23 @@ namespace GestionDepot.Controllers
             dbcontext.SaveChanges();
             return Ok();
         }
+        [HttpPost("login")]
+        public IActionResult Authenticate(LoginDto loginDto)
+        {
+            Console.WriteLine("Email: " + loginDto.Email);
+            Console.WriteLine("Password: " + loginDto.Password);
+
+            var user = dbcontext.Logins.FirstOrDefault(u => u.Email == loginDto.Email && u.Password == loginDto.Password);
+
+            if (user == null)
+                return Unauthorized();
+
+            return Ok(user);
+        }
+
+
+
+
     }
 
 }

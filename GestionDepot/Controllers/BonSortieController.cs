@@ -2,6 +2,9 @@
 using GestionDepot.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Linq;
 
 namespace GestionDepot.Controllers
 {
@@ -9,79 +12,92 @@ namespace GestionDepot.Controllers
     [ApiController]
     public class BonSortieController : ControllerBase
     {
-        private readonly GestionDBContext dbcontext;
-        public BonSortieController(GestionDBContext dbcontext)
+        private readonly GestionDBContext _dbContext;
+
+        public BonSortieController(GestionDBContext dbContext)
         {
-            this.dbcontext = dbcontext;
+            _dbContext = dbContext;
         }
+
         [HttpGet]
         public IActionResult GetAll()
         {
-            var Allobj = dbcontext.BonSorties.ToList();
-            return Ok(Allobj);
+            // Inclure les entités liées (Client, Produit, Chambre) lors de la récupération
+            var allObjects = _dbContext.BonSorties
+                .Include(b => b.Client)
+                .Include(b => b.Produit)
+                .Include(b => b.Chambre)
+                .ToList();
+
+            return Ok(allObjects);
         }
+
         [HttpGet]
         [Route("{id:int}")]
         public IActionResult GetById(int id)
         {
-            var dbobj = dbcontext.BonSorties.Find(id);
-            if (dbobj == null)
+            // Inclure les entités liées (Client, Produit, Chambre) lors de la récupération
+            var dbObj = _dbContext.BonSorties
+                .Include(b => b.Client)
+                .Include(b => b.Produit)
+                .Include(b => b.Chambre)
+                .FirstOrDefault(b => b.Id == id);
+
+            if (dbObj == null)
                 return NotFound();
             else
-                return Ok(dbobj);
-
+                return Ok(dbObj);
         }
+
         [HttpPost]
         public IActionResult AddItem(BonSortieDto obj)
         {
-            var dbobj = new BonSortie
+            var dbObj = new BonSortie
             {
                 Date = obj.Date,
-            Qte = obj.Qte,
-            IdChambre = obj.IdChambre,
-            IdClient = obj.IdClient,
-            IdProduit = obj.IdProduit,
-            IdSociete = obj.IdSociete
-        };
+                Qte = obj.Qte,
+                IdChambre = obj.IdChambre,
+                IdClient = obj.IdClient,
+                IdProduit = obj.IdProduit,
+                IdSociete = obj.IdSociete
+            };
 
-            dbcontext.BonSorties.Add(dbobj);
-            dbcontext.SaveChanges();
-            return Ok(dbobj);
-
-
+            _dbContext.BonSorties.Add(dbObj);
+            _dbContext.SaveChanges();
+            return Ok(dbObj);
         }
+
         [HttpPut]
         [Route("{id:int}")]
         public IActionResult Update(int id, BonSortieDto obj)
         {
-            var dbobj = dbcontext.BonSorties.Find(id);
-            if (dbobj is null)
+            var dbObj = _dbContext.BonSorties.Find(id);
+            if (dbObj == null)
                 return NotFound();
 
-            dbobj.Date = obj.Date;
-            dbobj.Qte = obj.Qte;
-            dbobj.IdChambre=obj.IdChambre;  
-            dbobj.IdClient = obj.IdClient;    
-            dbobj.IdProduit = obj.IdProduit;    
-            dbobj.IdSociete=obj.IdSociete; 
+            dbObj.Date = obj.Date;
+            dbObj.Qte = obj.Qte;
+            dbObj.IdChambre = obj.IdChambre;
+            dbObj.IdClient = obj.IdClient;
+            dbObj.IdProduit = obj.IdProduit;
+            dbObj.IdSociete = obj.IdSociete;
 
-            dbcontext.BonSorties.Update(dbobj);
-            dbcontext.SaveChanges();
-            return Ok(dbobj);
-
+            _dbContext.BonSorties.Update(dbObj);
+            _dbContext.SaveChanges();
+            return Ok(dbObj);
         }
+
         [HttpDelete]
         [Route("{id:int}")]
         public IActionResult Delete(int id)
         {
-            var dbobj = dbcontext.BonSorties.Find(id);
-            if (dbobj is null)
+            var dbObj = _dbContext.BonSorties.Find(id);
+            if (dbObj == null)
                 return NotFound();
 
-            dbcontext.BonSorties.Remove(dbobj);
-            dbcontext.SaveChanges();
+            _dbContext.BonSorties.Remove(dbObj);
+            _dbContext.SaveChanges();
             return Ok();
         }
     }
-
 }

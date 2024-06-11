@@ -270,3 +270,4 @@ C:\Users\Asus\Desktop\GestionDepot1\GestionDepot\obj\Debug\net8.0\refint\Gestion
 C:\Users\Asus\Desktop\GestionDepot1\GestionDepot\obj\Debug\net8.0\GestionDepot.pdb
 C:\Users\Asus\Desktop\GestionDepot1\GestionDepot\obj\Debug\net8.0\GestionDepot.genruntimeconfig.cache
 C:\Users\Asus\Desktop\GestionDepot1\GestionDepot\obj\Debug\net8.0\ref\GestionDepot.dll
+C:\Users\Asus\Desktop\GestionDepot1\GestionDepot\obj\Debug\net8.0\GestionDepot.sourcelink.json

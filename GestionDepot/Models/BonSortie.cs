@@ -14,9 +14,9 @@ namespace GestionDepot.Models
         [Column(TypeName = "decimal(16,3)")]
         public decimal Qte { get; set; }
 
-        [ForeignKey("Fournisseur")]
-        public int? IdFournisseur { get; set; }
-        public Fournisseur Fournisseur { get; set; }
+        [ForeignKey("Client")]
+        public int? IdClient { get; set; }
+        public Fournisseur Client { get; set; }
 
 
         [ForeignKey("Produit")]
