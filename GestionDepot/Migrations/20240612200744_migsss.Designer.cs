@@ -4,6 +4,7 @@ using GestionDepot.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionDepot.Migrations
 {
     [DbContext(typeof(GestionDBContext))]
-    partial class GestionDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240612200744_migsss")]
+    partial class migsss
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -238,48 +241,6 @@ namespace GestionDepot.Migrations
                     b.ToTable("Fournisseurs");
                 });
 
-            modelBuilder.Entity("GestionDepot.Models.JournalStock", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("Date");
-
-                    b.Property<int?>("IdBonEntree")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("IdBonSortie")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("IdProduit")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("IdSociete")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("QteE")
-                        .HasColumnType("decimal(16,3)");
-
-                    b.Property<decimal>("QteS")
-                        .HasColumnType("decimal(16,3)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdBonEntree");
-
-                    b.HasIndex("IdBonSortie");
-
-                    b.HasIndex("IdProduit");
-
-                    b.HasIndex("IdSociete");
-
-                    b.ToTable("JournalStock");
-                });
-
             modelBuilder.Entity("GestionDepot.Models.Login", b =>
                 {
                     b.Property<int>("Id")
@@ -340,10 +301,6 @@ namespace GestionDepot.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(250)");
-
                     b.Property<string>("MF")
                         .IsRequired()
                         .HasColumnType("nvarchar(255)");
@@ -351,14 +308,6 @@ namespace GestionDepot.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(250)");
-
-                    b.Property<string>("Responsable")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<string>("Telephone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 
@@ -448,33 +397,6 @@ namespace GestionDepot.Migrations
                     b.HasOne("GestionDepot.Models.Societe", "Societe")
                         .WithMany("Fournisseurs")
                         .HasForeignKey("IdSociete");
-
-                    b.Navigation("Societe");
-                });
-
-            modelBuilder.Entity("GestionDepot.Models.JournalStock", b =>
-                {
-                    b.HasOne("GestionDepot.Models.BonEntree", "BonEntree")
-                        .WithMany()
-                        .HasForeignKey("IdBonEntree");
-
-                    b.HasOne("GestionDepot.Models.BonSortie", "BonSortie")
-                        .WithMany()
-                        .HasForeignKey("IdBonSortie");
-
-                    b.HasOne("GestionDepot.Models.Produit", "Produit")
-                        .WithMany()
-                        .HasForeignKey("IdProduit");
-
-                    b.HasOne("GestionDepot.Models.Societe", "Societe")
-                        .WithMany()
-                        .HasForeignKey("IdSociete");
-
-                    b.Navigation("BonEntree");
-
-                    b.Navigation("BonSortie");
-
-                    b.Navigation("Produit");
 
                     b.Navigation("Societe");
                 });

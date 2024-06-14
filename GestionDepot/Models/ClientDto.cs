@@ -11,6 +11,10 @@ namespace GestionDepot.Models
         public string Type { get; set; }
 
         public string Cin { get; set; }
+
+        public string MF { get; set; }
+        public string Telephone { get; set; }
+        public DateTime? DateEmission { get; set; }
         public int? IdSociete { get; set; }
     }
 }

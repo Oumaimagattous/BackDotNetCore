@@ -12,16 +12,17 @@ namespace GestionDepot.Controllers
     public class BonEntreeController : ControllerBase
     {
         private readonly GestionDBContext _dbContext;
+       
 
         public BonEntreeController(GestionDBContext dbContext)
         {
             _dbContext = dbContext;
+           
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            // Inclure les entités liées (Fournisseur, Produit, Chambre) lors de la récupération
             var allObjects = _dbContext.BonEntrees
                 .Include(b => b.Fournisseur)
                 .Include(b => b.Produit)
@@ -35,7 +36,6 @@ namespace GestionDepot.Controllers
         [Route("{id:int}")]
         public IActionResult GetById(int id)
         {
-            // Inclure les entités liées (Fournisseur, Produit, Chambre) lors de la récupération
             var dbObj = _dbContext.BonEntrees
                 .Include(b => b.Fournisseur)
                 .Include(b => b.Produit)
@@ -51,6 +51,9 @@ namespace GestionDepot.Controllers
         [HttpPost]
         public IActionResult AddItem(BonEntreeDto obj)
         {
+            // Générer le prochain numéro de bon entrée
+            int numeroBonEntree = _dbContext.BonEntrees.Any() ? _dbContext.BonEntrees.Max(b => b.NumeroBonEntree) + 1 : 1;
+
             var dbObj = new BonEntree
             {
                 Date = obj.Date,
@@ -58,13 +61,43 @@ namespace GestionDepot.Controllers
                 IdChambre = obj.IdChambre,
                 IdFournisseur = obj.IdFournisseur,
                 IdProduit = obj.IdProduit,
-                IdSociete = obj.IdSociete
+                IdSociete = obj.IdSociete,
+                NumeroBonEntree = numeroBonEntree,
+                NombreCasier = obj.NombreCasier
             };
+
 
             _dbContext.BonEntrees.Add(dbObj);
             _dbContext.SaveChanges();
+
+            // Recherche d'une entrée existante dans le journal stock pour ce produit
+            var existingEntry = _dbContext.JournalStock.FirstOrDefault(j => j.IdProduit == obj.IdProduit);
+
+            if (existingEntry != null)
+            {
+                // Mise à jour de la quantité dans l'entrée existante du journal stock
+                existingEntry.QteE += obj.Qte;
+            }
+            else
+            {
+                // Ajout d'une nouvelle entrée dans le journal stock
+                var journalEntry = new JournalStock
+                {
+                    Date = obj.Date,
+                    QteE = obj.Qte, // Quantité ajoutée
+                    QteS = 0,
+                    IdProduit = obj.IdProduit
+                };
+
+                _dbContext.JournalStock.Add(journalEntry);
+            }
+
+            _dbContext.SaveChanges();
             return Ok(dbObj);
+
+
         }
+
 
         [HttpPut]
         [Route("{id:int}")]
@@ -80,6 +113,7 @@ namespace GestionDepot.Controllers
             dbObj.IdFournisseur = obj.IdFournisseur;
             dbObj.IdProduit = obj.IdProduit;
             dbObj.IdSociete = obj.IdSociete;
+            dbObj.NombreCasier = obj.NombreCasier;
 
             _dbContext.BonEntrees.Update(dbObj);
             _dbContext.SaveChanges();

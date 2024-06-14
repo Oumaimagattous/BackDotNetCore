@@ -34,6 +34,10 @@ namespace GestionDepot.Models
         public int? IdSociete { get; set; }
         public Societe Societe { get; set; }
 
+        public int NumeroBonEntree { get; set; } // Champ pour le numéro de BonEntree
 
+        public int NombreCasier { get; set; } // Champ pour le nombre de casiers
     }
+
 }
+

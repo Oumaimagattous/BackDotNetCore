@@ -22,6 +22,29 @@ namespace GestionDepot.Data
 
         public DbSet<BonSortie> BonSorties { get; set; }
 
+        public DbSet<JournalStock> JournalStock { get; set; }
+
         public DbSet<Login> Logins { get; set; }
+
+        public void AddEntry(JournalStock entry)
+        {
+            JournalStock.Add(entry);
+            SaveChanges();
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<BonEntree>()
+                .Property(b => b.NumeroBonEntree)
+                .ValueGeneratedNever(); // Empêche la génération automatique d'identité
+
+            modelBuilder.Entity<BonSortie>()
+              .Property(b => b.NumeroBonSortie)
+              .ValueGeneratedNever(); // Empêche la génération automatique d'identité pour BonSortie
+
+            // Autres configurations...
+        }
     }
 }

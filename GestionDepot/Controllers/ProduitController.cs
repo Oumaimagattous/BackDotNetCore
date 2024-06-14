@@ -2,6 +2,7 @@
 using GestionDepot.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace GestionDepot.Controllers
 {
@@ -34,17 +35,38 @@ namespace GestionDepot.Controllers
         [HttpPost]
         public IActionResult AddItem(ProduitDto obj)
         {
-            var dbobj = new Produit
+            var existingProduct = dbcontext.Produits.FirstOrDefault(p => p.Name == obj.Name);
+
+            if (existingProduct == null)
             {
-                Name = obj.Name, 
-                IdSociete=obj.IdSociete
+                var newProduct = new Produit
+                {
+                    Name = obj.Name,
+                    IdSociete = obj.IdSociete
+                };
 
-            };
+                dbcontext.Produits.Add(newProduct);
+                dbcontext.SaveChanges();
 
-            dbcontext.Produits.Add(dbobj);
-            dbcontext.SaveChanges();
-            return Ok(dbobj);
+                // Ajouter une nouvelle entrée dans le journal stock pour le nouveau produit
+                var journalEntry = new JournalStock
+                {
+                    Date = DateTime.Now,
+                    QteE = 0, // Initialiser la quantité à 0
+                    QteS = 0,
+                    IdProduit = newProduct.Id
+                };
 
+                dbcontext.JournalStock.Add(journalEntry);
+                dbcontext.SaveChanges();
+
+                return Ok(newProduct);
+            }
+            else
+            {
+                // Si le produit existe déjà, ne rien faire et renvoyer le produit existant
+                return Ok(existingProduct);
+            }
 
         }
         [HttpPut]

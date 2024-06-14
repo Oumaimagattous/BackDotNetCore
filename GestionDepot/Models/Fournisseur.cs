@@ -12,6 +12,22 @@ namespace GestionDepot.Models
         [Column(TypeName = "nvarchar(100)")]
         public string Name { get; set; } = "";
 
+
+        [Column(TypeName = "nvarchar(100)")]
+        public string NomCommercial { get; set; } = "";
+
+        [Column(TypeName = "nvarchar(16)")]
+        public string CIN { get; set; } = "";
+
+        [Column(TypeName = "date")]
+        public DateTime? DateEmission { get; set; }
+
+        [Column(TypeName = "nvarchar(20)")]
+        public string Telephone { get; set; } = "";
+
+        [Column(TypeName = "nvarchar(20)")]
+        public string MF { get; set; } = "";
+
         [Column(TypeName = "nvarchar(16)")]
         public string Adresse { get; set; } = "";
 

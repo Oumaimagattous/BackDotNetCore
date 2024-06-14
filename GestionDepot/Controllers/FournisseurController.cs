@@ -37,6 +37,11 @@ namespace GestionDepot.Controllers
             var dbobj = new Fournisseur
             {
                 Name = obj.Name,
+                NomCommercial = obj.NomCommercial,
+                CIN = obj.CIN,
+                DateEmission = obj.DateEmission,
+                Telephone = obj.Telephone,
+                MF = obj.MF,
                 Adresse = obj.Adresse,
                 IdSociete=obj.IdSociete
 
@@ -57,6 +62,11 @@ namespace GestionDepot.Controllers
                 return NotFound();
 
             dbobj.Name = obj.Name;
+            dbobj.NomCommercial = obj.NomCommercial;
+            dbobj.CIN = obj.CIN;
+            dbobj.DateEmission = obj.DateEmission;
+            dbobj.Telephone = obj.Telephone;
+            dbobj.MF = obj.MF;
             dbobj.Adresse = obj.Adresse;
             dbobj.IdSociete = obj.IdSociete;
 

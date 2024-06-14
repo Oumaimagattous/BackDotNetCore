@@ -22,11 +22,11 @@ namespace GestionDepot.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            // Inclure les entités liées (Client, Produit, Chambre) lors de la récupération
             var allObjects = _dbContext.BonSorties
                 .Include(b => b.Client)
                 .Include(b => b.Produit)
                 .Include(b => b.Chambre)
+                .Include(b => b.Fournisseur)
                 .ToList();
 
             return Ok(allObjects);
@@ -36,11 +36,11 @@ namespace GestionDepot.Controllers
         [Route("{id:int}")]
         public IActionResult GetById(int id)
         {
-            // Inclure les entités liées (Client, Produit, Chambre) lors de la récupération
             var dbObj = _dbContext.BonSorties
                 .Include(b => b.Client)
                 .Include(b => b.Produit)
                 .Include(b => b.Chambre)
+                .Include(b => b.Fournisseur)
                 .FirstOrDefault(b => b.Id == id);
 
             if (dbObj == null)
@@ -52,6 +52,8 @@ namespace GestionDepot.Controllers
         [HttpPost]
         public IActionResult AddItem(BonSortieDto obj)
         {
+            int numeroBonSortie = _dbContext.BonSorties.Count() + 1;
+
             var dbObj = new BonSortie
             {
                 Date = obj.Date,
@@ -59,10 +61,43 @@ namespace GestionDepot.Controllers
                 IdChambre = obj.IdChambre,
                 IdClient = obj.IdClient,
                 IdProduit = obj.IdProduit,
-                IdSociete = obj.IdSociete
+                IdSociete = obj.IdSociete,
+                IdFournisseur = obj.IdFournisseur,
+                Matricule = obj.Matricule,
+                Chauffeur = obj.Chauffeur,
+                CinChauffeur = obj.CinChauffeur,
+                NumeroBonSortie = numeroBonSortie
             };
 
+
+
+
             _dbContext.BonSorties.Add(dbObj);
+            _dbContext.SaveChanges();
+
+
+            // Recherche d'une entrée existante dans le journal stock pour ce produit
+            var existingEntry = _dbContext.JournalStock.FirstOrDefault(j => j.IdProduit == obj.IdProduit);
+
+            if (existingEntry != null)
+            {
+                // Mise à jour de la quantité dans l'entrée existante du journal stock
+                existingEntry.QteS += obj.Qte;
+            }
+            else
+            {
+                // Ajout d'une nouvelle entrée dans le journal stock
+                var journalEntry = new JournalStock
+                {
+                    Date = obj.Date,
+                    QteE = 0,
+                    QteS = obj.Qte, // Quantité soustraite
+                    IdProduit = obj.IdProduit
+                };
+
+                _dbContext.JournalStock.Add(journalEntry);
+            }
+
             _dbContext.SaveChanges();
             return Ok(dbObj);
         }
@@ -81,6 +116,10 @@ namespace GestionDepot.Controllers
             dbObj.IdClient = obj.IdClient;
             dbObj.IdProduit = obj.IdProduit;
             dbObj.IdSociete = obj.IdSociete;
+            dbObj.IdFournisseur = obj.IdFournisseur;
+            dbObj.Matricule = obj.Matricule;
+            dbObj.Chauffeur = obj.Chauffeur;
+            dbObj.CinChauffeur = obj.CinChauffeur;
 
             _dbContext.BonSorties.Update(dbObj);
             _dbContext.SaveChanges();

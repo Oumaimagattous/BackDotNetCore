@@ -33,6 +33,21 @@ namespace GestionDepot.Models
         public int? IdSociete { get; set; }
         public Societe Societe { get; set; }
 
+        [ForeignKey("Fournisseur")]
+        public int? IdFournisseur { get; set; }
+        public Fournisseur Fournisseur { get; set; }
+
+        [Column(TypeName = "nvarchar(255)")]
+        public string Matricule { get; set; } = "";
+
+        [Column(TypeName = "nvarchar(255)")]
+        public string Chauffeur { get; set; } = "";
+
+        [Column(TypeName = "nvarchar(255)")]
+        public string CinChauffeur { get; set; } = "";
+
+        public int NumeroBonSortie { get; set; }
+
 
 
     }

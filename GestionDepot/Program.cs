@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Cors;
 using GestionDepot.Data;
 using Microsoft.EntityFrameworkCore;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

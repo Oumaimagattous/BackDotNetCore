@@ -40,13 +40,18 @@ namespace GestionDepot.Controllers
                 Adresse = obj.Adresse,
                 Type = obj.Type,
                 Cin =obj.Cin,
-                IdSociete=obj.IdSociete
+                MF = obj.MF,
+                Telephone = obj.Telephone,
+                DateEmission = obj.DateEmission,
+                IdSociete =obj.IdSociete
      
 
             };
 
             dbcontext.Clients.Add(dbobj);
             dbcontext.SaveChanges();
+            //ProduitController p = new ProduitController(dbcontext);
+            
             return Ok(dbobj);
 
 
@@ -63,6 +68,9 @@ namespace GestionDepot.Controllers
             dbobj.Adresse = obj.Adresse;
             dbobj.Type = obj.Type;
             dbobj.Cin = obj.Cin;
+            dbobj.MF = obj.MF;
+            dbobj.Telephone = obj.Telephone;
+            dbobj.DateEmission = obj.DateEmission;
             dbobj.IdSociete = obj.IdSociete; 
 
             dbcontext.Clients.Update(dbobj);

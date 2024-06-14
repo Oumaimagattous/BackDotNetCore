@@ -4,6 +4,7 @@ using GestionDepot.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionDepot.Migrations
 {
     [DbContext(typeof(GestionDBContext))]
-    partial class GestionDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240613181027_migsd2")]
+    partial class migsd2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -258,9 +261,6 @@ namespace GestionDepot.Migrations
                     b.Property<int?>("IdProduit")
                         .HasColumnType("int");
 
-                    b.Property<int?>("IdSociete")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("QteE")
                         .HasColumnType("decimal(16,3)");
 
@@ -274,8 +274,6 @@ namespace GestionDepot.Migrations
                     b.HasIndex("IdBonSortie");
 
                     b.HasIndex("IdProduit");
-
-                    b.HasIndex("IdSociete");
 
                     b.ToTable("JournalStock");
                 });
@@ -466,17 +464,11 @@ namespace GestionDepot.Migrations
                         .WithMany()
                         .HasForeignKey("IdProduit");
 
-                    b.HasOne("GestionDepot.Models.Societe", "Societe")
-                        .WithMany()
-                        .HasForeignKey("IdSociete");
-
                     b.Navigation("BonEntree");
 
                     b.Navigation("BonSortie");
 
                     b.Navigation("Produit");
-
-                    b.Navigation("Societe");
                 });
 
             modelBuilder.Entity("GestionDepot.Models.Login", b =>

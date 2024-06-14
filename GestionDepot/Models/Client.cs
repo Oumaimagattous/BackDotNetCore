@@ -21,6 +21,15 @@ namespace GestionDepot.Models
         [Column(TypeName = "nvarchar(255)")]
         public string Cin { get; set; } = "";
 
+        [Column(TypeName = "nvarchar(20)")]
+        public string MF { get; set; } = "";
+
+        [Column(TypeName = "nvarchar(20)")]
+        public string Telephone { get; set; } = "";
+
+        [Column(TypeName = "date")]
+        public DateTime? DateEmission { get; set; }
+
         [ForeignKey("Societe")]
         public int? IdSociete { get; set; }
         public Societe Societe { get; set; }

@@ -11,5 +11,10 @@ namespace GestionDepot.Models
         public string Adresse { get; set; } = "";
          
         public string MF { get; set; } = "";
+
+        public string Telephone { get; set; } = "";
+        public string Responsable { get; set; } = "";
+        public string Email { get; set; } = "";
+
     }
 }

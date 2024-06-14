@@ -9,6 +9,7 @@
         public int? IdProduit { get; set; }
         public int? IdChambre { get; set; }
         public int? IdSociete { get; set; }
+        public int NombreCasier { get; set; }
 
 
 

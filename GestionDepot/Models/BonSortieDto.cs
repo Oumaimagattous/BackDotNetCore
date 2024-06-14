@@ -16,5 +16,9 @@ namespace GestionDepot.Models
 
         public int? IdChambre { get; set; }
         public int? IdSociete { get; set; }
+        public int? IdFournisseur { get; set; }
+        public string Matricule { get; set; }
+        public string Chauffeur { get; set; }
+        public string CinChauffeur { get; set; }
     }
 }
