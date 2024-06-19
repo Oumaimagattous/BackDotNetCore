@@ -20,5 +20,7 @@ namespace GestionDepot.Models
         public string Matricule { get; set; }
         public string Chauffeur { get; set; }
         public string CinChauffeur { get; set; }
+
+        public int NbrScasier { get; set; }
     }
 }

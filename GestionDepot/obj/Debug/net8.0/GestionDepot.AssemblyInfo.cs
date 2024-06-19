@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestionDepot")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce74e0f1cc924244bf000b2d824c1191abc8c266")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+183d00206fdfd5d35d699b9748c2912d6254d3a6")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestionDepot")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestionDepot")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

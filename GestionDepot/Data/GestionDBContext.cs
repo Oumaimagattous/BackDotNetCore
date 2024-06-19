@@ -24,6 +24,8 @@ namespace GestionDepot.Data
 
         public DbSet<JournalStock> JournalStock { get; set; }
 
+        public DbSet<JournalCasier> JournalCasiers { get; set; }
+
         public DbSet<Login> Logins { get; set; }
 
         public void AddEntry(JournalStock entry)
@@ -31,6 +33,18 @@ namespace GestionDepot.Data
             JournalStock.Add(entry);
             SaveChanges();
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("connection_string", options =>
+                {
+                    options.CommandTimeout(120); // Augmenter le délai d'attente à 120 secondes
+                });
+            }
+        }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

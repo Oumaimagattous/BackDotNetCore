@@ -48,6 +48,8 @@ namespace GestionDepot.Models
 
         public int NumeroBonSortie { get; set; }
 
+        public int NbrScasier { get; set; }
+
 
 
     }

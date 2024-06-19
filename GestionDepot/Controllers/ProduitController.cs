@@ -15,12 +15,27 @@ namespace GestionDepot.Controllers
         {
             this.dbcontext = dbcontext;
         }
-        [HttpGet]
+        [HttpGet("all")] // Nouvelle route spécifique pour GetAll
         public IActionResult GetAll()
         {
-            var Allobj = dbcontext.Produits.ToList();
-            return Ok(Allobj);
+            var allProducts = dbcontext.Produits.ToList();
+            return Ok(allProducts);
         }
+
+        // Nouvelle méthode pour obtenir les produits par ID de société
+        [HttpGet("bysociete/{societeId:int}")]
+        public IActionResult GetBySocieteId(int societeId)
+        {
+            var products = dbcontext.Produits
+                                    .Where(p => p.IdSociete == societeId)
+                                    .ToList();
+
+            if (!products.Any())
+                return NotFound("Aucun produit trouvé pour cette société.");
+
+            return Ok(products);
+        }
+
         [HttpGet]
         [Route("{id:int}")]
         public IActionResult GetById(int id)
@@ -48,17 +63,17 @@ namespace GestionDepot.Controllers
                 dbcontext.Produits.Add(newProduct);
                 dbcontext.SaveChanges();
 
-                // Ajouter une nouvelle entrée dans le journal stock pour le nouveau produit
-                var journalEntry = new JournalStock
-                {
-                    Date = DateTime.Now,
-                    QteE = 0, // Initialiser la quantité à 0
-                    QteS = 0,
-                    IdProduit = newProduct.Id
-                };
+                //// Ajouter une nouvelle entrée dans le journal stock pour le nouveau produit
+                //var journalEntry = new JournalStock
+                //{
+                //    Date = DateTime.Now,
+                //    QteE = 0, // Initialiser la quantité à 0
+                //    QteS = 0,
+                //    IdProduit = newProduct.Id
+                //};
 
-                dbcontext.JournalStock.Add(journalEntry);
-                dbcontext.SaveChanges();
+                //dbcontext.JournalStock.Add(journalEntry);
+                //dbcontext.SaveChanges();
 
                 return Ok(newProduct);
             }
