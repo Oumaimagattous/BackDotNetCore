@@ -30,5 +30,10 @@ namespace GestionDepot.Models
         [ForeignKey("Produit")]
         public int? IdProduit { get; set; }
         public Produit Produit { get; set; }
+
+        [ForeignKey("Fournisseur")]
+        public int? IdFournisseur { get; set; }
+        public Fournisseur Fournisseur { get; set; }
+
     }
 }

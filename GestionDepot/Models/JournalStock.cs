@@ -14,6 +14,9 @@ namespace GestionDepot.Models
         [Column(TypeName = "decimal(16,3)")]
         public decimal QteS { get; set; }
 
+        public string NumeroBon { get; set; }
+        
+
         [Column(TypeName = "Date")]
         public DateTime Date { get; set; }
 
@@ -34,7 +37,9 @@ namespace GestionDepot.Models
         public int? IdSociete { get; set; }
         public Societe Societe { get; set; }
 
-
+        [ForeignKey("Fournisseur")]
+        public int? IdFournisseur { get; set; }
+        public Fournisseur Fournisseur { get; set; }
 
 
 

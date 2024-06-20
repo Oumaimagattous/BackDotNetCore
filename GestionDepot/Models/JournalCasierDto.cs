@@ -9,6 +9,9 @@
         public DateTime Date { get; set; }
         public int? IdSociete { get; set; }
         public int? IdProduit { get; set; }
-        public int TotalStock { get; set; }
+        public decimal TotalStock { get; set; }
+
+        public int? IdFournisseur { get; set; }
+        
     }
 }

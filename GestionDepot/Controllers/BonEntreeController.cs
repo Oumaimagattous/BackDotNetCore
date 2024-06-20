@@ -53,6 +53,7 @@ namespace GestionDepot.Controllers
         {
             // Générer le prochain numéro de bon entrée
             int numeroBonEntree = _dbContext.BonEntrees.Any() ? _dbContext.BonEntrees.Max(b => b.NumeroBonEntree) + 1 : 1;
+            string numeroBonEntreeFormatted = "BE" + numeroBonEntree;
 
             var dbObj = new BonEntree
             {
@@ -89,7 +90,10 @@ namespace GestionDepot.Controllers
                 IdProduit = obj.IdProduit,
                 IdBonEntree = dbObj.Id,
                 IdBonSortie = null,
-                IdSociete = obj.IdSociete 
+                IdSociete = obj.IdSociete,
+                IdFournisseur = obj.IdFournisseur,
+                NumeroBon = numeroBonEntreeFormatted
+
 
 
             };
@@ -107,7 +111,8 @@ namespace GestionDepot.Controllers
                 IdProduit = obj.IdProduit,
                 IdBonEntree = dbObj.Id,
                 IdBonSortie = null,
-                IdSociete = obj.IdSociete
+                IdSociete = obj.IdSociete,
+                IdFournisseur = obj.IdFournisseur
             };
 
             _dbContext.JournalCasiers.Add(journalCasierEntry);

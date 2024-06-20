@@ -4,6 +4,7 @@ using GestionDepot.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionDepot.Migrations
 {
     [DbContext(typeof(GestionDBContext))]
-    partial class GestionDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240620081247_mifgsq")]
+    partial class mifgsq
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -313,10 +316,6 @@ namespace GestionDepot.Migrations
 
                     b.Property<int?>("IdSociete")
                         .HasColumnType("int");
-
-                    b.Property<string>("NumeroBon")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("QteE")
                         .HasColumnType("decimal(16,3)");

@@ -53,6 +53,7 @@ namespace GestionDepot.Controllers
         public IActionResult AddItem(BonSortieDto obj)
         {
             int numeroBonSortie = _dbContext.BonSorties.Count() + 1;
+            string numeroBonSortieFormatted = "BS" + numeroBonSortie;
 
             var dbObj = new BonSortie
             {
@@ -85,7 +86,9 @@ namespace GestionDepot.Controllers
                 IdProduit = obj.IdProduit,
                 IdBonEntree = null,
                 IdBonSortie = dbObj.Id,
-                IdSociete = obj.IdSociete
+                IdSociete = obj.IdSociete,
+                IdFournisseur = obj.IdFournisseur,
+                NumeroBon = numeroBonSortieFormatted
 
 
             };
@@ -102,7 +105,8 @@ namespace GestionDepot.Controllers
                 IdProduit = obj.IdProduit,
                 IdBonEntree = null,
                 IdBonSortie = dbObj.Id,
-                IdSociete = obj.IdSociete
+                IdSociete = obj.IdSociete,
+                IdFournisseur = obj.IdFournisseur
             };
 
             _dbContext.JournalCasiers.Add(journalCasierEntry);

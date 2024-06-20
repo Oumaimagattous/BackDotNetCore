@@ -24,25 +24,27 @@ namespace GestionDepot.Controllers
             var allEntries = _dbContext.JournalCasiers
                 .Include(j => j.BonEntree)
                 .Include(j => j.BonSortie)
-                .Include(j => j.Produit)
                 .Include(j => j.Societe)
+                .Include(j => j.Produit)
+                .Include(j => j.Fournisseur)
                 .Where(j => j.IdSociete == societeId)
                 .OrderBy(j => j.Date)
                 .ToList();
 
-            var stockByProduct = new Dictionary<int, int>();
+            var stockByProductAndSupplier = new Dictionary<(int, int), int>();
             var result = new List<JournalCasierDto>();
 
             foreach (var entry in allEntries)
             {
                 int productId = entry.IdProduit ?? 0;
+                int supplierId = entry.IdFournisseur ?? 0;
 
-                if (!stockByProduct.ContainsKey(productId))
+                if (!stockByProductAndSupplier.ContainsKey((productId, supplierId)))
                 {
-                    stockByProduct[productId] = 0;
+                    stockByProductAndSupplier[(productId, supplierId)] = 0;
                 }
 
-                stockByProduct[productId] += entry.NbrE - entry.NbrS;
+                stockByProductAndSupplier[(productId, supplierId)] += entry.NbrE - entry.NbrS;
 
                 result.Add(new JournalCasierDto
                 {
@@ -53,7 +55,11 @@ namespace GestionDepot.Controllers
                     Date = entry.Date,
                     IdSociete = societeId,
                     IdProduit = productId,
-                    TotalStock = stockByProduct[productId]
+                    TotalStock = stockByProductAndSupplier[(productId, supplierId)],
+                    IdFournisseur = supplierId
+                    
+
+
                 });
             }
 
@@ -65,14 +71,16 @@ namespace GestionDepot.Controllers
         {
             var etatStock = _dbContext.JournalCasiers
                 .Where(j => j.Societe.Id == societeId)
-                .GroupBy(j => j.IdProduit)
+                .GroupBy(j => new { j.IdProduit, j.IdFournisseur })
                 .Select(g => new
                 {
-                    IdProduit = g.Key,
+                    IdProduit = g.Key.IdProduit,
+                    IdFournisseur = g.Key.IdFournisseur,
                     TotalNbrE = g.Sum(j => j.NbrE),
                     TotalNbrS = g.Sum(j => j.NbrS),
                     StockTotal = g.Sum(j => j.NbrE) - g.Sum(j => j.NbrS),
-                    Produit = _dbContext.Produits.FirstOrDefault(p => p.Id == g.Key)
+                    Produit = _dbContext.Produits.FirstOrDefault(p => p.Id == g.Key.IdProduit),
+                    Fournisseur = _dbContext.Fournisseurs.FirstOrDefault(f => f.Id == g.Key.IdFournisseur)
                 })
                 .ToList();
 
@@ -87,6 +95,7 @@ namespace GestionDepot.Controllers
                 .Include(j => j.BonSortie)
                 .Include(j => j.Produit)
                 .Include(j => j.Societe)
+                .Include(j => j.Fournisseur)
                 .FirstOrDefault(j => j.Id == id);
 
             if (entry == null)
@@ -106,7 +115,8 @@ namespace GestionDepot.Controllers
                 NbrS = dto.NbrS,
                 Date = dto.Date,
                 IdSociete = dto.IdSociete,
-                IdProduit = dto.IdProduit
+                IdProduit = dto.IdProduit,
+                IdFournisseur = dto.IdFournisseur
             };
 
             _dbContext.JournalCasiers.Add(entry);
@@ -129,6 +139,7 @@ namespace GestionDepot.Controllers
             entry.Date = dto.Date;
             entry.IdSociete = dto.IdSociete;
             entry.IdProduit = dto.IdProduit;
+            entry.IdFournisseur = dto.IdFournisseur;
 
             _dbContext.JournalCasiers.Update(entry);
             _dbContext.SaveChanges();

@@ -31,6 +31,20 @@ namespace GestionDepot.Controllers
                 return Ok(item);
 
         }
+
+        [HttpGet("BySociete/{idSociete:int}")]
+        public IActionResult GetBySocieteId(int idSociete)
+        {
+            var clients = dbcontext.Clients
+                .Where(c => c.IdSociete == idSociete)
+                .ToList();
+
+            if (clients == null || clients.Count == 0)
+                return NotFound();
+
+            return Ok(clients);
+        }
+
         [HttpPost]
         public IActionResult AddItem(ClientDto obj)
         {
