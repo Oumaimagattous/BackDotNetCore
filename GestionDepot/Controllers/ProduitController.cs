@@ -47,10 +47,12 @@ namespace GestionDepot.Controllers
                 return Ok(dbobj);
 
         }
+
         [HttpPost]
         public IActionResult AddItem(ProduitDto obj)
         {
-            var existingProduct = dbcontext.Produits.FirstOrDefault(p => p.Name == obj.Name);
+            var existingProduct = dbcontext.Produits
+                .FirstOrDefault(p => p.Name == obj.Name && p.IdSociete == obj.IdSociete);
 
             if (existingProduct == null)
             {
@@ -63,43 +65,37 @@ namespace GestionDepot.Controllers
                 dbcontext.Produits.Add(newProduct);
                 dbcontext.SaveChanges();
 
-                //// Ajouter une nouvelle entrée dans le journal stock pour le nouveau produit
-                //var journalEntry = new JournalStock
-                //{
-                //    Date = DateTime.Now,
-                //    QteE = 0, // Initialiser la quantité à 0
-                //    QteS = 0,
-                //    IdProduit = newProduct.Id
-                //};
-
-                //dbcontext.JournalStock.Add(journalEntry);
-                //dbcontext.SaveChanges();
-
                 return Ok(newProduct);
             }
             else
             {
-                // Si le produit existe déjà, ne rien faire et renvoyer le produit existant
+                // Si le produit existe déjà pour cette société, ne rien faire et renvoyer le produit existant
                 return Ok(existingProduct);
             }
-
         }
         [HttpPut]
         [Route("{id:int}")]
-        public IActionResult Update(int id, ClientDto obj)
+        public IActionResult Update(int id, ProduitDto obj)
         {
             var dbobj = dbcontext.Produits.Find(id);
-            if (dbobj is null)
+            if (dbobj == null)
                 return NotFound();
 
-            dbobj.Name = obj.Name; 
-            dbobj.IdSociete=obj.IdSociete;
+            // Vérifiez si la société existe
+            var societeExists = dbcontext.Societes.Any(s => s.Id == obj.IdSociete);
+            if (!societeExists)
+            {
+                return BadRequest("La société spécifiée n'existe pas.");
+            }
+
+            dbobj.Name = obj.Name;
+            dbobj.IdSociete = obj.IdSociete;
 
             dbcontext.Produits.Update(dbobj);
             dbcontext.SaveChanges();
             return Ok(dbobj);
-
         }
+
         [HttpDelete]
         [Route("{id:int}")]
         public IActionResult Delete(int id)

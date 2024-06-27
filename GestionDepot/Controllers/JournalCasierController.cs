@@ -105,25 +105,43 @@ namespace GestionDepot.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddItem(JournalCasierDto dto)
+        public IActionResult AddEntry([FromBody] JournalCasierDto dto)
         {
-            var entry = new JournalCasier
+            try
             {
-                IdBonEntree = dto.IdBonEntree,
-                IdBonSortie = dto.IdBonSortie,
-                NbrE = dto.NbrE,
-                NbrS = dto.NbrS,
-                Date = dto.Date,
-                IdSociete = dto.IdSociete,
-                IdProduit = dto.IdProduit,
-                IdFournisseur = dto.IdFournisseur
-            };
+                if (dto.IdBonEntree != null && dto.IdBonSortie != null)
+                {
+                    return BadRequest("Vous ne pouvez pas spécifier à la fois IdBonEntree et IdBonSortie.");
+                }
 
-            _dbContext.JournalCasiers.Add(entry);
-            _dbContext.SaveChanges();
+                var newEntry = new JournalCasier
+                {
+                    IdBonEntree = dto.IdBonEntree,
+                    IdBonSortie = dto.IdBonSortie,
+                    NbrE = dto.NbrE,
+                    NbrS = dto.NbrS,
+                    Date = dto.Date,
+                    IdSociete = dto.IdSociete,
+                    IdProduit = dto.IdProduit,
+                    IdFournisseur = dto.IdFournisseur
+                };
 
-            return Ok(entry);
+                _dbContext.JournalCasiers.Add(newEntry);
+                _dbContext.SaveChanges();
+
+                return CreatedAtAction(nameof(GetById), new { id = newEntry.Id }, newEntry);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception for debugging purposes
+                Console.WriteLine($"Error adding JournalCasier: {ex}");
+                return StatusCode(500, $"Erreur interne du serveur: {ex.Message}");
+            }
         }
+
+
+
+
 
         [HttpPut("{id:int}")]
         public IActionResult Update(int id, JournalCasierDto dto)

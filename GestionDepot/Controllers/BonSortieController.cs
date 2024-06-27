@@ -53,7 +53,7 @@ namespace GestionDepot.Controllers
         public IActionResult AddItem(BonSortieDto obj)
         {
             int numeroBonSortie = _dbContext.BonSorties.Count() + 1;
-            string numeroBonSortieFormatted = "BS" + numeroBonSortie;
+            string numeroBonSortieFormatted = "BS Num:" + numeroBonSortie;
 
             var dbObj = new BonSortie
             {

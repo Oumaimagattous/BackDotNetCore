@@ -53,7 +53,7 @@ namespace GestionDepot.Controllers
         {
             // Générer le prochain numéro de bon entrée
             int numeroBonEntree = _dbContext.BonEntrees.Any() ? _dbContext.BonEntrees.Max(b => b.NumeroBonEntree) + 1 : 1;
-            string numeroBonEntreeFormatted = "BE" + numeroBonEntree;
+            string numeroBonEntreeFormatted = "BE Num:" + numeroBonEntree;
 
             var dbObj = new BonEntree
             {
