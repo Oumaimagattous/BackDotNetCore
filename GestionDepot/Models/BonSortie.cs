@@ -16,7 +16,7 @@ namespace GestionDepot.Models
 
         [ForeignKey("Client")]
         public int? IdClient { get; set; }
-        public Fournisseur Client { get; set; }
+        public Client Client { get; set; }
 
 
         [ForeignKey("Produit")]
@@ -50,6 +50,8 @@ namespace GestionDepot.Models
 
         public int NbrScasier { get; set; }
 
+
+        
 
 
     }

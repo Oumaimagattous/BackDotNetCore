@@ -20,6 +20,7 @@ namespace GestionDepot.Models
         public int? IdFournisseur { get; set; }
         public Fournisseur Fournisseur { get; set; }
 
+       
 
 
     }

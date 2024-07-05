@@ -29,5 +29,7 @@ namespace GestionDepot.Models
 
         public ICollection<Client> Clients { get; set; }
         public ICollection<Fournisseur> Fournisseurs { get; set; }
+
+        public ICollection<JournalStock> JournalStocks { get; set; }
     }
 }

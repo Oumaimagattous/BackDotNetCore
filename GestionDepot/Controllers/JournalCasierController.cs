@@ -66,6 +66,49 @@ namespace GestionDepot.Controllers
             return Ok(result);
         }
 
+        [HttpGet("FiltrerParProduitEtFournisseur")]
+        public IActionResult FiltrerParProduitEtFournisseur(int societeId, int idProduit, int idFournisseur, DateTime d1, DateTime d2)
+        {
+            var result = _dbContext.JournalCasiers
+                .Where(js => js.IdSociete == societeId &&
+                             js.IdProduit == idProduit &&
+                             js.IdFournisseur == idFournisseur &&
+                             js.Date >= d1 && js.Date <= d2)
+
+                .ToList();
+            
+            var stockByProductAndSupplier = new Dictionary<(int, int), int>();
+            var results = new List<JournalCasierDto>();
+
+            foreach (var entry in result)
+            {
+                int productId = entry.IdProduit ?? 0;
+                int supplierId = entry.IdFournisseur ?? 0;
+
+                if (!stockByProductAndSupplier.ContainsKey((productId, supplierId)))
+                {
+                    stockByProductAndSupplier[(productId, supplierId)] = 0;
+                }
+
+                stockByProductAndSupplier[(productId, supplierId)] += entry.NbrE - entry.NbrS;
+
+                results.Add(new JournalCasierDto
+                {
+                    IdBonEntree = entry.IdBonEntree,
+                    IdBonSortie = entry.IdBonSortie,
+                    NbrE = entry.NbrE,
+                    NbrS = entry.NbrS,
+                    Date = entry.Date,
+                    IdSociete = societeId,
+                    IdProduit = productId,
+                    TotalStock = stockByProductAndSupplier[(productId, supplierId)]
+               
+                });
+            }
+
+            return Ok(results);
+        }
+
         [HttpGet("etatStock")]
         public IActionResult GetEtatStock(int societeId)
         {
@@ -96,13 +139,11 @@ namespace GestionDepot.Controllers
                 .Include(j => j.Produit)
                 .Include(j => j.Societe)
                 .Include(j => j.Fournisseur)
-                .FirstOrDefault(j => j.Id == id);
-
-            if (entry == null)
-                return NotFound();
+                .Single(j => j.Id == id); 
 
             return Ok(entry);
         }
+
 
         [HttpPost]
         public IActionResult AddEntry([FromBody] JournalCasierDto dto)

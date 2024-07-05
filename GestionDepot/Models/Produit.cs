@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace GestionDepot.Models
 {
@@ -16,5 +17,8 @@ namespace GestionDepot.Models
         [ForeignKey("Societe")]
         public int? IdSociete { get; set; }
         public Societe Societe { get; set; }
+
+        [JsonIgnore]
+        public ICollection<JournalStock> JournalStocks { get; set; }
     }
 }

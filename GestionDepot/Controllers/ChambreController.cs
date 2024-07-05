@@ -2,6 +2,7 @@
 using GestionDepot.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace GestionDepot.Controllers
 {
@@ -24,13 +25,13 @@ namespace GestionDepot.Controllers
         [Route("{id:int}")]
         public IActionResult GetById(int id)
         {
-            var dbobj = dbcontext.Chambres.Find(id);
-            if (dbobj == null)
+            var dbObj = dbcontext.Chambres.Single(c => c.Id == id);
+            if (dbObj == null)
                 return NotFound();
             else
-                return Ok(dbobj);
-
+                return Ok(dbObj);
         }
+
 
         [HttpGet("BySociete/{idSociete:int}")]
         public IActionResult GetBySocieteId(int idSociete)

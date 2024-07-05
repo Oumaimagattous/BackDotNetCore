@@ -4,6 +4,7 @@ using GestionDepot.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionDepot.Migrations
 {
     [DbContext(typeof(GestionDBContext))]
-    partial class GestionDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240701212854_migf44")]
+    partial class migf44
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -458,8 +461,9 @@ namespace GestionDepot.Migrations
                         .HasForeignKey("IdChambre");
 
                     b.HasOne("GestionDepot.Models.Client", "Client")
-                        .WithMany()
-                        .HasForeignKey("IdClient");
+                        .WithMany("BonSorties")
+                        .HasForeignKey("IdClient")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("GestionDepot.Models.Fournisseur", "Fournisseur")
                         .WithMany()
@@ -514,12 +518,12 @@ namespace GestionDepot.Migrations
             modelBuilder.Entity("GestionDepot.Models.JournalCasier", b =>
                 {
                     b.HasOne("GestionDepot.Models.BonEntree", "BonEntree")
-                        .WithMany()
+                        .WithMany("JournalCasiers")
                         .HasForeignKey("IdBonEntree")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("GestionDepot.Models.BonSortie", "BonSortie")
-                        .WithMany()
+                        .WithMany("JournalCasiers")
                         .HasForeignKey("IdBonSortie")
                         .OnDelete(DeleteBehavior.Cascade);
 
@@ -549,12 +553,12 @@ namespace GestionDepot.Migrations
             modelBuilder.Entity("GestionDepot.Models.JournalStock", b =>
                 {
                     b.HasOne("GestionDepot.Models.BonEntree", "BonEntree")
-                        .WithMany()
+                        .WithMany("JournalStocks")
                         .HasForeignKey("IdBonEntree")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("GestionDepot.Models.BonSortie", "BonSortie")
-                        .WithMany()
+                        .WithMany("JournalStocks")
                         .HasForeignKey("IdBonSortie")
                         .OnDelete(DeleteBehavior.Cascade);
 
@@ -563,7 +567,7 @@ namespace GestionDepot.Migrations
                         .HasForeignKey("IdFournisseur");
 
                     b.HasOne("GestionDepot.Models.Produit", "Produit")
-                        .WithMany("JournalStocks")
+                        .WithMany()
                         .HasForeignKey("IdProduit");
 
                     b.HasOne("GestionDepot.Models.Societe", "Societe")
@@ -599,9 +603,23 @@ namespace GestionDepot.Migrations
                     b.Navigation("Societe");
                 });
 
-            modelBuilder.Entity("GestionDepot.Models.Produit", b =>
+            modelBuilder.Entity("GestionDepot.Models.BonEntree", b =>
                 {
+                    b.Navigation("JournalCasiers");
+
                     b.Navigation("JournalStocks");
+                });
+
+            modelBuilder.Entity("GestionDepot.Models.BonSortie", b =>
+                {
+                    b.Navigation("JournalCasiers");
+
+                    b.Navigation("JournalStocks");
+                });
+
+            modelBuilder.Entity("GestionDepot.Models.Client", b =>
+                {
+                    b.Navigation("BonSorties");
                 });
 
             modelBuilder.Entity("GestionDepot.Models.Societe", b =>

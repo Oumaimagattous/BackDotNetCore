@@ -2,6 +2,7 @@
 using GestionDepot.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace GestionDepot.Controllers
 {
@@ -14,23 +15,22 @@ namespace GestionDepot.Controllers
         {
             this.dbcontext = dbcontext;
         }
+
         [HttpGet]
         public IActionResult GetAll()
         {
             var Allobj = dbcontext.Fournisseurs.ToList();
             return Ok(Allobj);
         }
+
         [HttpGet]
         [Route("{id:int}")]
         public IActionResult GetById(int id)
         {
-            var dbobj = dbcontext.Fournisseurs.Find(id);
-            if (dbobj == null)
-                return NotFound();
-            else
-                return Ok(dbobj);
-
+            var fournisseur = dbcontext.Fournisseurs.Single(f => f.Id == id);
+            return Ok(fournisseur);
         }
+
 
         [HttpGet("BySociete/{idSociete:int}")]
         public IActionResult GetBySocieteId(int idSociete)

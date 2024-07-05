@@ -4,6 +4,7 @@ using GestionDepot.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionDepot.Migrations
 {
     [DbContext(typeof(GestionDBContext))]
-    partial class GestionDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240701180519_migf2")]
+    partial class migf2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -457,7 +460,7 @@ namespace GestionDepot.Migrations
                         .WithMany()
                         .HasForeignKey("IdChambre");
 
-                    b.HasOne("GestionDepot.Models.Client", "Client")
+                    b.HasOne("GestionDepot.Models.Fournisseur", "Client")
                         .WithMany()
                         .HasForeignKey("IdClient");
 
@@ -515,11 +518,10 @@ namespace GestionDepot.Migrations
                 {
                     b.HasOne("GestionDepot.Models.BonEntree", "BonEntree")
                         .WithMany()
-                        .HasForeignKey("IdBonEntree")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("IdBonEntree");
 
                     b.HasOne("GestionDepot.Models.BonSortie", "BonSortie")
-                        .WithMany()
+                        .WithMany("JournalCasiers")
                         .HasForeignKey("IdBonSortie")
                         .OnDelete(DeleteBehavior.Cascade);
 
@@ -550,11 +552,10 @@ namespace GestionDepot.Migrations
                 {
                     b.HasOne("GestionDepot.Models.BonEntree", "BonEntree")
                         .WithMany()
-                        .HasForeignKey("IdBonEntree")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("IdBonEntree");
 
                     b.HasOne("GestionDepot.Models.BonSortie", "BonSortie")
-                        .WithMany()
+                        .WithMany("JournalStocks")
                         .HasForeignKey("IdBonSortie")
                         .OnDelete(DeleteBehavior.Cascade);
 
@@ -563,7 +564,7 @@ namespace GestionDepot.Migrations
                         .HasForeignKey("IdFournisseur");
 
                     b.HasOne("GestionDepot.Models.Produit", "Produit")
-                        .WithMany("JournalStocks")
+                        .WithMany()
                         .HasForeignKey("IdProduit");
 
                     b.HasOne("GestionDepot.Models.Societe", "Societe")
@@ -599,8 +600,10 @@ namespace GestionDepot.Migrations
                     b.Navigation("Societe");
                 });
 
-            modelBuilder.Entity("GestionDepot.Models.Produit", b =>
+            modelBuilder.Entity("GestionDepot.Models.BonSortie", b =>
                 {
+                    b.Navigation("JournalCasiers");
+
                     b.Navigation("JournalStocks");
                 });
 

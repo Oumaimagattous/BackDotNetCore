@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace GestionDepot.Controllers
 {
@@ -31,6 +33,21 @@ namespace GestionDepot.Controllers
 
             return Ok(allObjects);
         }
+        //filtrer articles par fournisseur méthode 2
+        [HttpGet]
+        [Route("GetAllByFournuisseur/{idfour:int}")]
+        public IActionResult GetAllByFournuisseur(int idfour)
+        {
+            var result = new List<Produit>();
+               var grouped = _dbContext.JournalStock.Where(x => x.IdFournisseur == idfour).ToList().GroupBy(s => s.IdProduit).Select(group => new { somme = group.Sum(x => x.QteE - x.QteS), key = group.Key });
+            foreach (var group in grouped.Where(a => a.somme > 0))
+            {
+                Produit p = _dbContext.Produits.Single(a=>a.Id==group.key);
+                result.Add(p);
+            }
+           
+            return Ok(result);
+        }
 
         [HttpGet]
         [Route("{id:int}")]
@@ -41,7 +58,7 @@ namespace GestionDepot.Controllers
                 .Include(b => b.Produit)
                 .Include(b => b.Chambre)
                 .Include(b => b.Fournisseur)
-                .FirstOrDefault(b => b.Id == id);
+                .Single(b => b.Id == id);
 
             if (dbObj == null)
                 return NotFound();
@@ -81,7 +98,7 @@ namespace GestionDepot.Controllers
             var journalEntry = new JournalStock
             {
                 Date = obj.Date,
-                QteE = 0, // Quantité ajoutée
+                QteE = 0, 
                 QteS = obj.Qte,
                 IdProduit = obj.IdProduit,
                 IdBonEntree = null,
@@ -138,16 +155,30 @@ namespace GestionDepot.Controllers
             _dbContext.BonSorties.Update(dbObj);
             _dbContext.SaveChanges();
 
-            // Recherche d'une entrée existante dans le journal stock pour ce produit
+            
             var existingEntry = _dbContext.JournalStock.FirstOrDefault(j => j.IdProduit == obj.IdProduit && j.IdBonSortie == dbObj.Id);
 
             if (existingEntry != null)
             {
-                // Mise à jour de la quantité dans l'entrée existante du journal stock
+                
                 existingEntry.QteS = obj.Qte;
+
+                _dbContext.JournalStock.Update(existingEntry);
+                _dbContext.SaveChanges();
             }
-            _dbContext.JournalStock.Update(existingEntry);
-            _dbContext.SaveChanges();
+            
+
+            var journalCasierEntry = _dbContext.JournalCasiers.SingleOrDefault(j => j.IdProduit == obj.IdProduit && j.IdBonSortie == dbObj.Id);
+            if (journalCasierEntry != null)
+            {
+
+                journalCasierEntry.NbrS = obj.NbrScasier;
+
+                _dbContext.JournalCasiers.Update(journalCasierEntry);
+                _dbContext.SaveChanges();
+            }
+
+
             return Ok(dbObj);
         }
 
@@ -155,13 +186,47 @@ namespace GestionDepot.Controllers
         [Route("{id:int}")]
         public IActionResult Delete(int id)
         {
-            var dbObj = _dbContext.BonSorties.Find(id);
-            if (dbObj == null)
-                return NotFound();
+            try
+            {
+                var dbObj = _dbContext.BonSorties.SingleOrDefault(b => b.Id == id);
+                if (dbObj == null)
+                    return NotFound();
 
-            _dbContext.BonSorties.Remove(dbObj);
-            _dbContext.SaveChanges();
-            return Ok();
+                _dbContext.BonSorties.Remove(dbObj);
+                _dbContext.SaveChanges();
+
+                return Ok();
+            }
+            catch (InvalidOperationException)
+            {
+                return NotFound();
+            }
         }
+
+        //[HttpGet]
+        //[Route("GetProductsBySupplier/{fournisseurId:int}")]
+        //public IActionResult GetProductsBySupplier(int fournisseurId)
+        //{
+        //    var produitsAvecStock = _dbContext.Produits
+        //        .Include(p => p.JournalStocks)
+        //        .Where(p => p.JournalStocks.Any(js => js.IdFournisseur == fournisseurId && (js.QteE - js.QteS) > 0))
+        //        .Select(p => new
+        //        {
+        //            Produit = new
+        //            {
+        //                Id = p.Id,
+        //                Name = p.Name,
+        //                IdSociete = p.IdSociete
+        //            },
+        //            StockTotal = p.JournalStocks
+        //                .Where(js => js.IdFournisseur == fournisseurId)
+        //                .Sum(js => js.QteE - js.QteS)
+        //        })
+        //        .ToList();
+
+        //    return Ok(produitsAvecStock);
+        //}
+
+
     }
 }

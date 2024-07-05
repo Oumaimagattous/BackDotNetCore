@@ -40,7 +40,7 @@ namespace GestionDepot.Data
             {
                 optionsBuilder.UseSqlServer("connection_string", options =>
                 {
-                    options.CommandTimeout(120); // Augmenter le délai d'attente à 120 secondes
+                    options.CommandTimeout(120); 
                 });
             }
         }
@@ -58,7 +58,33 @@ namespace GestionDepot.Data
               .Property(b => b.NumeroBonSortie)
               .ValueGeneratedNever(); // Empêche la génération automatique d'identité pour BonSortie
 
-            // Autres configurations...
+            // Configure cascade delete for BonSortie and BonENtree
+
+            modelBuilder.Entity<JournalStock>()
+            .HasOne(js => js.BonSortie)
+            .WithMany()
+            .HasForeignKey(js => js.IdBonSortie)
+            .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<JournalStock>()
+                .HasOne(js => js.BonEntree)
+                .WithMany()
+                .HasForeignKey(js => js.IdBonEntree)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<JournalCasier>()
+                .HasOne(jc => jc.BonSortie)
+                .WithMany()
+                .HasForeignKey(jc => jc.IdBonSortie)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<JournalCasier>()
+                .HasOne(jc => jc.BonEntree)
+                .WithMany()
+                .HasForeignKey(jc => jc.IdBonEntree)
+                .OnDelete(DeleteBehavior.Cascade);
+
+
         }
     }
 }

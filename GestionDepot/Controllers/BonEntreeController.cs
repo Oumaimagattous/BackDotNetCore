@@ -40,7 +40,7 @@ namespace GestionDepot.Controllers
                 .Include(b => b.Fournisseur)
                 .Include(b => b.Produit)
                 .Include(b => b.Chambre)
-                .FirstOrDefault(b => b.Id == id);
+                .Single(b => b.Id == id);
 
             if (dbObj == null)
                 return NotFound();
@@ -48,10 +48,11 @@ namespace GestionDepot.Controllers
                 return Ok(dbObj);
         }
 
+
         [HttpPost]
         public IActionResult AddItem(BonEntreeDto obj)
         {
-            // Générer le prochain numéro de bon entrée
+            
             int numeroBonEntree = _dbContext.BonEntrees.Any() ? _dbContext.BonEntrees.Max(b => b.NumeroBonEntree) + 1 : 1;
             string numeroBonEntreeFormatted = "BE Num:" + numeroBonEntree;
 
@@ -71,21 +72,11 @@ namespace GestionDepot.Controllers
             _dbContext.BonEntrees.Add(dbObj);
             _dbContext.SaveChanges();
 
-            //// Recherche d'une entrée existante dans le journal stock pour ce produit
-            //var existingEntry = _dbContext.JournalStock.FirstOrDefault(j => j.IdProduit == obj.IdProduit);
-
-            //if (existingEntry != null)
-            //{
-            //    // Mise à jour de la quantité dans l'entrée existante du journal stock
-            //    existingEntry.QteE += obj.Qte;
-            //}
-            //else
-            //{
-            // Ajout d'une nouvelle entrée dans le journal stock
+           
             var journalEntry = new JournalStock
             {
                 Date = obj.Date,
-                QteE = obj.Qte, // Quantité ajoutée
+                QteE = obj.Qte, 
                 QteS = 0,
                 IdProduit = obj.IdProduit,
                 IdBonEntree = dbObj.Id,
@@ -143,33 +134,51 @@ namespace GestionDepot.Controllers
             _dbContext.BonEntrees.Update(dbObj);
             _dbContext.SaveChanges();
 
-            // Recherche d'une entrée existante dans le journal stock pour ce produit
             var existingEntry = _dbContext.JournalStock.FirstOrDefault(j => j.IdProduit == obj.IdProduit && j.IdBonEntree == dbObj.Id);
 
             if (existingEntry != null)
             {
-                // Mise à jour de la quantité dans l'entrée existante du journal stock
+               
                 existingEntry.QteE = obj.Qte;
                 _dbContext.JournalStock.Update(existingEntry);
                 _dbContext.SaveChanges();
 
             }
-        
+
+            var journalCasierEntry = _dbContext.JournalCasiers.SingleOrDefault(j => j.IdProduit == obj.IdProduit && j.IdBonEntree == dbObj.Id);
+            if (journalCasierEntry != null)
+            {
+               
+                journalCasierEntry.NbrE = obj.NombreCasier;
+
+                _dbContext.JournalCasiers.Update(journalCasierEntry);
+                _dbContext.SaveChanges();
+            }
+
             return Ok();
 
-        } 
+        }
 
         [HttpDelete]
         [Route("{id:int}")]
         public IActionResult Delete(int id)
         {
-            var dbObj = _dbContext.BonEntrees.Find(id);
-            if (dbObj == null)
-                return NotFound();
+            try
+            {
+                var dbObj = _dbContext.BonEntrees.SingleOrDefault(b => b.Id == id);
+                if (dbObj == null)
+                    return NotFound();
 
-            _dbContext.BonEntrees.Remove(dbObj);
-            _dbContext.SaveChanges();
-            return Ok();
+                _dbContext.BonEntrees.Remove(dbObj);
+                _dbContext.SaveChanges();
+
+                return Ok();
+            }
+            catch (InvalidOperationException)
+            {
+                return NotFound();
+            }
         }
+
     }
 }

@@ -33,5 +33,7 @@ namespace GestionDepot.Models
         [ForeignKey("Societe")]
         public int? IdSociete { get; set; }
         public Societe Societe { get; set; }
+
+
     }
 }

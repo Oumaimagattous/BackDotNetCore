@@ -22,5 +22,12 @@ namespace GestionDepot.Models
         public string CinChauffeur { get; set; }
 
         public int NbrScasier { get; set; }
+
+      
+
+
+
+
+
     }
 }

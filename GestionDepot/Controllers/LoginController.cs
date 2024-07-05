@@ -24,13 +24,10 @@ namespace GestionDepot.Controllers
         [Route("{id:int}")]
         public IActionResult GetById(int id)
         {
-            var item = dbcontext.Logins .Find(id);
-            if (item == null)
-                return NotFound();
-            else
-                return Ok(item);
-
+            var item = dbcontext.Logins.Single(l => l.Id == id);
+            return Ok(item);
         }
+
         [HttpPost]
         public IActionResult AddItem(LoginDto obj)
         {

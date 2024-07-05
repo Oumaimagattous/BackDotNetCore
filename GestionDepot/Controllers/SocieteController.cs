@@ -25,13 +25,17 @@ namespace GestionDepot.Controllers
         [Route("{id:int}")]
         public IActionResult GetById(int id)
         {
-            var item = dbcontext.Societes.Find(id);
-            if (item == null)
-                return NotFound();
-            else
+            try
+            {
+                var item = dbcontext.Societes.Single(s => s.Id == id);
                 return Ok(item);
-
+            }
+            catch (InvalidOperationException)
+            {
+                return NotFound();
+            }
         }
+
         [HttpPost]
         public IActionResult AddItem(SocieteDto obj)
         {
@@ -53,39 +57,49 @@ namespace GestionDepot.Controllers
 
         }
         [HttpPut]
-        [Route("{id:guid}")]
+        [Route("{id:int}")]
         public IActionResult Update(int id, SocieteDto obj)
         {
-            var dbobj = dbcontext.Societes.Find(id);
-            if (dbobj is null)
+            try
+            {
+                var dbobj = dbcontext.Societes.Single(s => s.Id == id);
+
+                dbobj.Name = obj.Name;
+                dbobj.Adresse = obj.Adresse;
+                dbobj.MF = obj.MF;
+                dbobj.Telephone = obj.Telephone;
+                dbobj.Responsable = obj.Responsable;
+                dbobj.Email = obj.Email;
+
+                dbcontext.Societes.Update(dbobj);
+                dbcontext.SaveChanges();
+                return Ok(dbobj);
+            }
+            catch (InvalidOperationException)
+            {
                 return NotFound();
-
-            dbobj.Name = obj.Name;
-            dbobj.Adresse = obj.Adresse;
-            dbobj.MF = obj.MF;
-            dbobj.Telephone = obj.Telephone;
-            dbobj.Responsable = obj.Responsable;
-            dbobj.Email = obj.Email;
-
-            dbcontext.Societes.Update(dbobj);
-            dbcontext.SaveChanges();
-            return Ok(dbobj);
-
+            }
         }
+
         [HttpDelete]
         [Route("{id:int}")]
         public IActionResult Delete(int id)
         {
-            var dbobj = dbcontext.Societes.Find(id);
-            if (dbobj is null)
-                return NotFound();
+            try
+            {
+                var dbobj = dbcontext.Societes.Single(s => s.Id == id);
 
-            dbcontext.Societes.Remove(dbobj);
-            dbcontext.SaveChanges();
-            return Ok();
+                dbcontext.Societes.Remove(dbobj);
+                dbcontext.SaveChanges();
+                return Ok();
+            }
+            catch (InvalidOperationException)
+            {
+                return NotFound();
+            }
         }
 
-        // Nouvelle méthode pour récupérer les informations de la société connectée
+       
         [HttpGet("current")]
         public IActionResult GetCurrentSociete()
         {
@@ -98,7 +112,7 @@ namespace GestionDepot.Controllers
             var societeId = societeIdClaim.Value;
 
             // Ensuite, utiliser cet ID pour récupérer les informations de la société connectée
-            var societe = dbcontext.Societes.Find(int.Parse(societeId)); // Supposons que vous utilisez un ID de type int
+            var societe = dbcontext.Societes.Find(int.Parse(societeId)); 
 
             if (societe == null)
                 return NotFound();

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace GestionDepot.Controllers
@@ -22,7 +23,7 @@ namespace GestionDepot.Controllers
         [HttpGet]
         public IActionResult GetAll(int societeId)
         {
-            // Récupérer toutes les entrées de journal de stock pour la société spécifiée
+            
             var allEntries = _dbContext.JournalStock
                 .Include(js => js.Produit)
                 .Include(js => js.BonEntree)
@@ -32,29 +33,28 @@ namespace GestionDepot.Controllers
                 .OrderBy(js => js.Date)
                 .ToList();
 
-            // Dictionnaire pour suivre le stock total par produit et fournisseur
+           
             var stockByProductAndSupplier = new Dictionary<(int, int), decimal>();
 
-            // Liste des résultats à retourner
+           
             var result = new List<JournalStockDto>();
 
-            // Calculer le stock total pour chaque entrée
+          
             foreach (var entry in allEntries)
             {
-                // Utiliser l'opérateur de levée de null pour s'assurer que IdProduit et IdFournisseur ne sont pas null
-                int productId = entry.IdProduit ?? 0; // Remplacer 0 par une valeur par défaut appropriée
-                int supplierId = entry.IdFournisseur ?? 0; // Remplacer 0 par une valeur par défaut appropriée
-
-                // Initialiser le stock pour le produit et le fournisseur s'ils n'existent pas encore dans le dictionnaire
+                
+                int productId = entry.IdProduit ?? 0; 
+                int supplierId = entry.IdFournisseur ?? 0; 
+                
                 if (!stockByProductAndSupplier.ContainsKey((productId, supplierId)))
                 {
                     stockByProductAndSupplier[(productId, supplierId)] = 0;
                 }
 
-                // Mettre à jour le stock total pour le produit et le fournisseur
+                
                 stockByProductAndSupplier[(productId, supplierId)] += entry.QteE - entry.QteS;
 
-                // Ajouter l'entrée à la liste des résultats avec le stock total calculé
+                
                 result.Add(new JournalStockDto
                 {
                     Date = entry.Date,
@@ -75,6 +75,155 @@ namespace GestionDepot.Controllers
             return Ok(result);
         }
 
+
+        [HttpGet("FiltrerParProduitEtFournisseur")]
+        public IActionResult FiltrerParProduitEtFournisseur(int societeId, int idProduit, int idFournisseur, DateTime d1, DateTime d2)
+        {
+            var journalStockDtos = _dbContext.JournalStock
+                .Include(js => js.Produit) 
+                .Include(js => js.Fournisseur)
+                .Where(js => js.IdSociete == societeId &&
+                             js.IdProduit == idProduit &&
+                             js.IdFournisseur== idFournisseur &&
+                             js.Date >= d1 && js.Date<= d2
+                            )
+               
+
+                .ToList();
+            var stockByProductAndSupplier = new Dictionary<(int, int), decimal>();
+            var result = new List<JournalStockDto>();
+
+            foreach (var entry in journalStockDtos)
+            {
+                int productId = entry.IdProduit ?? 0;
+                int supplierId = entry.IdFournisseur ?? 0;
+
+                if (!stockByProductAndSupplier.ContainsKey((productId, supplierId)))
+                {
+                    stockByProductAndSupplier[(productId, supplierId)] = 0;
+                }
+
+                stockByProductAndSupplier[(productId, supplierId)] += entry.QteE - entry.QteS;
+
+                result.Add(new JournalStockDto
+                {
+                    Date = entry.Date,
+                    QteE = entry.QteE,
+                    QteS = entry.QteS,
+                    NumeroBon = entry.NumeroBon,
+                    StockTotal = stockByProductAndSupplier[(productId, supplierId)],
+                    IdBonEntree = entry.IdBonEntree,
+                    IdBonSortie = entry.IdBonSortie,
+                    IdProduit = productId,
+                    Produit = entry.Produit
+
+                });
+            }
+
+            return Ok(result);
+        }
+
+
+
+        //[HttpGet]
+        //[Route("methode2")]
+        //public IActionResult GetAll(int societeId,int idarticle,DateTime d1,DateTime d2 ,int idFour)
+        //{
+        //    Societe dbsociete = _dbContext.Societes.Single(a=>a.Id== societeId);
+
+        //    List<JournalStock> liste = new List<JournalStock>();
+        //    if(idFour!=0)
+        //        liste = dbsociete.JournalStocks.Where(x=>x.IdProduit==idarticle && x.Date>=d1 && x.Date<=d2 && x.IdFournisseur==idFour).ToList();
+        //    else
+        //        liste = dbsociete.JournalStocks.Where(x => x.IdProduit == idarticle && x.Date >= d1 && x.Date <= d2).ToList();
+
+        //    var stockByProductAndSupplier = new Dictionary<(int, int), decimal>();
+
+
+        //    var result = new List<JournalStockDto>();
+
+
+        //    foreach (var entry in liste)
+        //    {
+
+        //        int productId = entry.IdProduit ?? 0; 
+        //        int supplierId = entry.IdFournisseur ?? 0; 
+
+        //        if (!stockByProductAndSupplier.ContainsKey((productId, supplierId)))
+        //        {
+        //            stockByProductAndSupplier[(productId, supplierId)] = 0;
+        //        }
+
+
+        //        stockByProductAndSupplier[(productId, supplierId)] += entry.QteE - entry.QteS;
+
+
+        //        result.Add(new JournalStockDto
+        //        {
+        //            Date = entry.Date,
+        //            QteE = entry.QteE,
+        //            QteS = entry.QteS,
+        //            NumeroBon = entry.NumeroBon,
+        //            StockTotal = stockByProductAndSupplier[(productId, supplierId)],
+        //            IdProduit = productId,
+        //            Produit = entry.Produit,
+        //            IdBonEntree = entry.IdBonEntree,
+        //            IdBonSortie = entry.IdBonSortie,
+        //            IdSociete = societeId,
+        //            IdFournisseur = supplierId
+
+        //        });
+        //    }
+
+        //    return Ok(result);
+        //}
+
+
+
+        [HttpGet]
+        [Route("methode3")]
+        public IActionResult GetAll(int societeId, int idarticle, DateTime d1, DateTime d2, int idFour)
+        {
+            var query = _dbContext.JournalStock
+                .Include(js => js.Produit)
+                .Include(js => js.BonEntree)
+                .Include(js => js.BonSortie)
+                .Include(js => js.Fournisseur)
+                .Where(js => js.Produit.IdSociete == societeId
+                         && js.Date >= d1
+                         && js.Date <= d2);
+
+            if (idarticle != 0)
+            {
+                query = query.Where(js => js.IdProduit == idarticle);
+            }
+
+            if (idFour != 0)
+            {
+                query = query.Where(js => js.IdFournisseur == idFour);
+            }
+
+            var result = query.ToList()
+                .GroupBy(js => new { js.IdProduit, js.IdFournisseur })
+                .Select(group => new JournalStockDto
+                {
+                    Date = group.First().Date,
+                    QteE = group.Sum(js => js.QteE),
+                    QteS = group.Sum(js => js.QteS),
+                    NumeroBon = group.First().NumeroBon,
+                    StockTotal = group.Sum(js => js.QteE - js.QteS),
+                    IdProduit = group.Key.IdProduit ?? 0,
+                    Produit = group.First().Produit,
+                    IdBonEntree = group.First().IdBonEntree,
+                    IdBonSortie = group.First().IdBonSortie,
+                    IdSociete = societeId,
+                    IdFournisseur = group.Key.IdFournisseur ?? 0
+                })
+                .OrderBy(dto => dto.Date)
+                .ToList();
+
+            return Ok(result);
+        }
 
         [HttpGet]
         [Route("etatStock")]
@@ -104,18 +253,23 @@ namespace GestionDepot.Controllers
         [Route("{id:int}")]
         public IActionResult GetById(int id)
         {
-            var dbObj = _dbContext.JournalStock
-                .Include(b => b.BonSortie)
-                .Include(b => b.Produit)
-                .Include(b => b.BonEntree)
-                .Include(b => b.Fournisseur)
-                .FirstOrDefault(b => b.Id == id);
+            try
+            {
+                var dbObj = _dbContext.JournalStock
+                    .Include(b => b.BonSortie)
+                    .Include(b => b.Produit)
+                    .Include(b => b.BonEntree)
+                    .Include(b => b.Fournisseur)
+                    .Single(b => b.Id == id);
 
-            if (dbObj == null)
-                return NotFound();
-            else
                 return Ok(dbObj);
+            }
+            catch (InvalidOperationException)
+            {
+                return NotFound();
+            }
         }
+
 
         [HttpPost]
         public IActionResult AddItem(JournalStockDto obj)

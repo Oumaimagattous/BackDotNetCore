@@ -2,6 +2,7 @@
 using GestionDepot.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace GestionDepot.Controllers
 {
@@ -20,17 +21,16 @@ namespace GestionDepot.Controllers
             var Allobj = dbcontext.Clients.ToList();
             return Ok(Allobj);
         }
+
         [HttpGet]
         [Route("{id:int}")]
         public IActionResult GetById(int id)
         {
-            var item = dbcontext.Clients.Find(id);
-            if (item == null)
-                return NotFound();
-            else
-                return Ok(item);
-
+            
+            var item = dbcontext.Clients.Single(c => c.Id == id);
+            return Ok(item);
         }
+
 
         [HttpGet("BySociete/{idSociete:int}")]
         public IActionResult GetBySocieteId(int idSociete)
@@ -64,7 +64,7 @@ namespace GestionDepot.Controllers
 
             dbcontext.Clients.Add(dbobj);
             dbcontext.SaveChanges();
-            //ProduitController p = new ProduitController(dbcontext);
+            
             
             return Ok(dbobj);
 
