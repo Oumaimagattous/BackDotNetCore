@@ -111,6 +111,19 @@ namespace GestionDepot.Controllers
 
             return Ok(dbObj);
 
+            var chambreEntry = new Chambre
+            {
+                Name = "Chambre Entry",
+                IdSociete = obj.IdSociete,
+                IdProduit = obj.IdProduit,
+                IdFournisseur = obj.IdFournisseur
+            };
+
+            _dbContext.Chambres.Add(chambreEntry);
+            _dbContext.SaveChanges();
+
+            return Ok(dbObj);
+
 
         }
 

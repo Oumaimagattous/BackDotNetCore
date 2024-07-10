@@ -49,6 +49,23 @@ namespace GestionDepot.Controllers
             return Ok(result);
         }
 
+
+        [HttpGet]
+        [Route("GetChambreByFournisseurAndProduit/{idFournisseur:int}/{idProduit:int}")]
+        public IActionResult GetChambreByFournisseurAndProduit(int idFournisseur, int idProduit)
+        {
+            var bonEntree = _dbContext.BonEntrees
+                .Where(be => be.IdFournisseur == idFournisseur && be.IdProduit == idProduit)
+                .OrderByDescending(be => be.Date) // Vous pouvez ajuster cet ordre selon vos besoins
+                .FirstOrDefault();
+
+            if (bonEntree == null)
+                return NotFound("No matching Bon Entree found for the given fournisseur and produit.");
+
+            return Ok(bonEntree.IdChambre);
+        }
+
+
         [HttpGet]
         [Route("{id:int}")]
         public IActionResult GetById(int id)
@@ -129,6 +146,19 @@ namespace GestionDepot.Controllers
             _dbContext.JournalCasiers.Add(journalCasierEntry);
 
             _dbContext.SaveChanges();
+            return Ok(dbObj);
+
+            var chambreEntry = new Chambre
+            {
+                Name = "Chambre Exit",
+                IdSociete = obj.IdSociete,
+                IdProduit = obj.IdProduit,
+                IdFournisseur = obj.IdFournisseur
+            };
+
+            _dbContext.Chambres.Add(chambreEntry);
+            _dbContext.SaveChanges();
+
             return Ok(dbObj);
         }
 
